@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="am" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Hacking Resources | የሥነ �ምግባር ሃክንግ ምንጮች</title>
+    <meta name="description" content="Comprehensive ethical hacking resources, tools, and tutorials for cybersecurity professionals">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .resource-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .resource-item {
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-item:hover {
+            border-left-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .resource-link {
+            display: block;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.8rem;
+            background-color: var(--light-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .description {
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--dark-color);
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        .language-toggle {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+        
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ethical Hacking Resources</h1>
+            <p class="subtitle">እንኩአን ወደ ሥነ ምግባር ሃኪንግ ምንጮች መጡ!</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="language-toggle">
+            <button class="language-btn" onclick="toggleLanguage()">አማርኛ / English</button>
+        </div>
+        
+        <section class="content-section">
+            <h2>Welcome to Our Hackers Hub</h2>
+            <p>Discover premium resources for ethical hacking, penetration testing, and cybersecurity education.</p>
+            
+            <ul class="resource-list">
+                <li class="resource-item">
+                    <a href="tools.html" class="resource-link">
+                        Premium Hacking Tools
+                        <span class="description">(ለሃኪንግ የሚረዱ ምርጥ መሣሪያዎች)</span>
+                    </a>
+                </li>
+                
+                <li class="resource-item">
+                    <a href="service.html" class="resource-link">
+                        Professional Hacking Services
+                        <span class="description">(ለማንኛውም የሥነ ምግባር ሃኪንግ አገልግሎቶች)</span>
+                    </a>
+                </li>
+                
+                <li class="resource-item">
+                    <a href="tutorial.html" class="resource-link">
+                        Complete Hacking Tutorials
+                        <span class="description">(ሙሉ የሆኑ የሃኪንግ ማስተማሪያዎች)</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="content-section">
+            <h2>About Ethical Hacking</h2>
+            <p>Ethical hacking involves authorized attempts to identify vulnerabilities in computer systems. Our resources help security professionals protect systems against malicious attacks.</p>
+            <p>ሥነ �ምግባር  hacking ኮምፒዩተር ስርዓቶች ውስጥ ያሉ ደካማ ነገሮችን በሕጋዊ መንገድ ለማግኘት ያስችላል።</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Ethical Hacking Resources. All rights reserved.</p>
+            <p>ሁሉም መብቶች የተጠበቁ ናቸው።</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleLanguage() {
+            // This would be expanded to actually toggle between languages
+            alert("Language toggle functionality will be implemented here");
+        }
+    </script>
+</body>
+</html>

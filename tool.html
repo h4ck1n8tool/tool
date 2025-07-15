@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Security Tools | Ethical Hacking Resources</title>
+    <meta name="description" content="Professional-grade security tools for penetration testing and ethical hacking">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+        
+        h1, h2, h3 {
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        .tool-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .tool-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        details {
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 4px;
+        }
+        
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        details[open] {
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        /* Payment Section Styles */
+        .payment-section {
+            margin: 30px 0;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .payment-methods {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .payment-method-option {
+            cursor: pointer;
+            padding: 1.2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .payment-method-option:hover {
+            border-color: var(--accent-color);
+            background: #f8faff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 107, 255, 0.1);
+        }
+        
+        .payment-method-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .payment-details h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.2s;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .wallet-address-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+        
+        .copy-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        
+        .copy-wrapper code {
+            font-family: 'Courier New', monospace;
+            background: #e9ecef;
+            padding: 8px 12px;
+            border-radius: 6px;
+            word-break: break-all;
+            flex-grow: 1;
+        }
+        
+        .copy-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+        
+        .qr-code {
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        
+        .payment-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .verification-instructions {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .payment-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .payment-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .payment-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .warning-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--dark-color);
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Professional Security Tools</h1>
+            <p>For authorized penetration testing and ethical hacking</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="warning-note">
+            <strong>Important:</strong> These tools are for educational and authorized security testing purposes only. Always obtain proper authorization before testing any system.
+        </div>
+        
+        <ol class="tool-list">
+            <li class="tool-item">
+                <h2 class="tool-title">Social Media Phishing Toolkit</h2>
+                <details>
+                    <summary>Tool Description</summary>
+                    <p>Comprehensive phishing simulation tool for testing social media platforms including Telegram, Facebook, and Instagram. This tool helps identify security vulnerabilities in social media authentication systems.</p>
+                    <ul>
+                        <li>Test before purchase option available</li>
+                        <li>Customizable templates for various platforms</li>
+                        <li>Detailed reporting of vulnerabilities found</li>
+                    </ul>
+                </details>
+                <a href="https://t.me/mr_hkr1" class="payment-btn">Purchase Tool (500 ETB)</a>
+            </li>
+            
+            <li class="tool-item">
+                <h2 class="tool-title">Camera Access Testing Tool</h2>
+                <details>
+                    <summary>Tool Description</summary>
+                    <p>Advanced tool for testing camera security vulnerabilities in web browsers and mobile devices.</p>
+                    <details>
+                        <summary>How It Works</summary>
+                        <p>This tool generates a test link that, when opened, can demonstrate camera access vulnerabilities:</p>
+                        <ul>
+                            <li>Captures images when link is accessed</li>
+                            <li>Supports both photo and video capture</li>
+                            <li>Real-time streaming capability</li>
+                            <li>Results delivered via secure Telegram channel</li>
+                        </ul>
+                        <p><strong>Note:</strong> For legal use only with proper authorization.</p>
+                    </details>
+                </details>
+                <a href="https://t.me/mr_hkr" class="payment-btn">Purchase Tool (500 ETB)</a>
+            </li>
+            
+            <li class="tool-item">
+                <h2 class="tool-title">WiFi Network Stress Testing Tool</h2>
+                <details>
+                    <summary>Tool Description</summary>
+                    <p>Professional tool for testing WiFi network resilience under heavy load conditions.</p>
+                    <details>
+                        <summary>Technical Specifications</summary>
+                        <ul>
+                            <li>Runs on Termux or Linux environments</li>
+                            <li>Mobile device compatible</li>
+                            <li>Customizable stress levels</li>
+                            <li>Detailed network performance reports</li>
+                        </ul>
+                    </details>
+                </details>
+                <a href="https://t.me/mr_hkr" class="payment-btn">Purchase Tool (500 ETB)</a>
+            </li>
+            
+            <li class="tool-item">
+                <h2 class="tool-title">Network Traffic Analysis Tool</h2>
+                <details>
+                    <summary>Tool Description</summary>
+                    <p>Advanced tool for analyzing and testing network traffic patterns for specific IP addresses.</p>
+                    <details>
+                        <summary>System Requirements</summary>
+                        <ul>
+                            <li>Requires target IP address</li>
+                            <li>High-performance device recommended</li>
+                            <li>Minimum 8GB RAM for optimal performance</li>
+                            <li>Linux-based systems preferred</li>
+                        </ul>
+                        <p><em>Note:</em> The tool's effectiveness depends on your device's processing power.</p>
+                    </details>
+                </details>
+                <a href="https://t.me/mr_hkr1" class="payment-btn">Purchase Tool (500 ETB)</a>
+            </li>
+        </ol>
+
+        <div class="payment-section">
+            <h2>Payment Options</h2>
+            <p>All tools are priced at 500 ETB (or 3 USDT equivalent):</p>
+            
+            <div class="payment-methods">
+                <div class="payment-method-option" data-method="bank">
+                    <img src="cbe_logo.png" alt="Commercial Bank of Ethiopia" class="payment-method-img">
+                    <div class="payment-details">
+                        <h3>Commercial Bank of Ethiopia</h3>
+                        <p>Bank Transfer - 500 ETB</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method-option" data-method="usdt">
+                    <img src="trc20_logo.png" alt="USDT TRC20" class="payment-method-img">
+                    <div class="payment-details">
+                        <h3>USDT (TRC20)</h3>
+                        <p>Crypto Payment - 3 USDT</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method-option" data-method="telebirr">
+                    <img src="telebirr_logo.png" alt="Telebirr" class="payment-method-img">
+                    <div class="payment-details">
+                        <h3>Telebirr</h3>
+                        <p>Mobile Payment - 500 ETB</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method-option" data-method="cbebirr">
+                    <img src="cbebirr_logo.png" alt="CBE Birr" class="payment-method-img">
+                    <div class="payment-details">
+                        <h3>CBE Birr</h3>
+                        <p>Mobile Payment - 500 ETB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Ethical Hacking Resources. All rights reserved.</p>
+            <p>For authorized security testing purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Payment method selection
+            const paymentOptions = document.querySelectorAll('.payment-method-option');
+            
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const method = this.getAttribute('data-method');
+                    showPaymentModal(method);
+                });
+            });
+            
+            // Modal close functionality
+            document.querySelector('.close-modal').addEventListener('click', closeModal);
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === document.getElementById('paymentModal')) {
+                    closeModal();
+                }
+            });
+            
+            function showPaymentModal(method) {
+                let modalContent = '';
+                const modal = document.getElementById('paymentModal');
+                
+                switch(method) {
+                    case 'bank':
+                        modalContent = `
+                            <h3><i class="fas fa-university"></i> Bank Transfer</h3>
+                            <div class="payment-instructions">
+                                <p class="payment-amount"><strong>Amount to Pay:</strong> 500 ETB</p>
+                                <div class="bank-details">
+                                    <p><strong>Bank:</strong> Commercial Bank of Ethiopia</p>
+                                    <p><strong>Account Name:</strong> ABENEZER SHIGUTE</p>
+                                    <p><strong>Account Number:</strong> 1000612391754</p>
+                                    <p><strong>Branch:</strong> Main Branch</p>
+                                </div>
+                                <p class="payment-note">Please include the tool name as payment reference.</p>
+                                <div class="payment-actions">
+                                    <a href="https://t.me/mr_hkr" class="payment-btn">
+                                        <i class="fab fa-telegram"></i> Send Receipt
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'usdt':
+                        modalContent = `
+                            <h3><i class="fab fa-ethereum"></i> USDT Payment</h3>
+                            <div class="payment-instructions">
+                                <p class="payment-amount"><strong>Amount to Pay:</strong> 3 USDT (TRC20)</p>
+                                
+                                <div class="wallet-address-box">
+                                    <div class="address-header">
+                                        <span>TRC20 Wallet Address</span>
+                                        <button onclick="copyToClipboard('modalTrc20Address')" class="copy-btn">
+                                            <i class="far fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <code id="modalTrc20Address">TPPtCP3eYJwD6XUYVZ5VAZ3A4iDkW9xRHe</code>
+                                </div>
+                                
+                                <div class="qr-container">
+                                    <img src="trc.jpg" alt="USDT TRC20 QR Code" width="180" class="qr-code">
+                                    <p class="payment-note">Scan to send exact 3 USDT</p>
+                                </div>
+                                
+                                <div class="verification-instructions">
+                                    <h4><i class="fas fa-check-circle"></i> Payment Verification</h4>
+                                    <ol>
+                                        <li>After sending, check transaction on <a href="https://tronscan.org/" target="_blank">Tronscan</a></li>
+                                        <li>Send us:
+                                            <ul>
+                                                <li>Transaction hash (TXID)</li>
+                                                <li>Amount sent (must be exactly 3 USDT)</li>
+                                                <li>Tool name you're purchasing</li>
+                                            </ul>
+                                        </li>
+                                        <li>We'll deliver tool within 1-2 hours</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="payment-actions">
+                                    <a href="https://tronscan.org/#/address/TPPtCP3eYJwD6XUYVZ5VAZ3A4iDkW9xRHe" target="_blank" class="payment-btn btn-outline">
+                                        <i class="fas fa-search"></i> Check Wallet
+                                    </a>
+                                    <a href="https://t.me/mr_hkr1" class="payment-btn">
+                                        <i class="fab fa-telegram"></i> Send Proof
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'telebirr':
+                        modalContent = `
+                            <h3><i class="fas fa-mobile-alt"></i> Telebirr Payment</h3>
+                            <div class="payment-instructions">
+                                <p class="payment-amount"><strong>Amount to Pay:</strong> 500 ETB</p>
+                                <div class="recipient-info">
+                                    <p><strong>Recipient Name:</strong> Tenaye Utalo</p>
+                                    <p><strong>Phone Number:</strong> +251940980555</p>
+                                </div>
+                                <p class="confirmation-instruction">After payment, please send:</p>
+                                <ol>
+                                    <li>Screenshot of payment confirmation</li>
+                                    <li>Tool name you're purchasing</li>
+                                    <li>Your contact information</li>
+                                </ol>
+                                <div class="payment-actions">
+                                    <a href="t.me/mr_hkr1" class="payment-btn">
+                                        <i class="fab fa-telegram"></i> Confirm Payment
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'cbebirr':
+                        modalContent = `
+                            <h3><i class="fas fa-wallet"></i> CBE Birr Payment</h3>
+                            <div class="payment-instructions">
+                                <p class="payment-amount"><strong>Amount to Pay:</strong> 500 ETB</p>
+                                <div class="recipient-info">
+                                    <p><strong>Recipient Number:</strong> 0940980555</p>
+                                </div>
+                                <p class="payment-note">After payment, forward the confirmation SMS with tool name to our Telegram.</p>
+                                <div class="payment-actions">
+                                    <a href="https://t.me/mr_hkr" class="payment-btn">
+                                        <i class="fab fa-telegram"></i> Send Confirmation
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                }
+                
+                document.getElementById('modalBody').innerHTML = modalContent;
+                modal.style.display = 'block';
+            }
+            
+            function closeModal() {
+                document.getElementById('paymentModal').style.display = 'none';
+            }
+            
+            // Copy to clipboard function
+            window.copyToClipboard = function(elementId) {
+                const element = document.getElementById(elementId);
+                const text = element.innerText;
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    const btn = event.target.closest('button');
+                    if (btn) {
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                        }, 2000);
+                    }
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
