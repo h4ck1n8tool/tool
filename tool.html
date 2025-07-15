@@ -152,7 +152,7 @@
         
         .modal-content {
             background: white;
-            margin: 10% auto;
+            margin: 5% auto;
             padding: 2rem;
             border-radius: 12px;
             width: 90%;
@@ -160,6 +160,8 @@
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             animation: slideDown 0.3s;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         
         .close-modal {
@@ -294,6 +296,25 @@
             margin-top: 2rem;
         }
         
+        /* Custom scrollbar for modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -301,6 +322,11 @@
             
             .container {
                 padding: 10px;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -494,13 +520,13 @@
                         
                     case 'usdt':
                         modalContent = `
-                            <h3><i class="fab fa-ethereum"></i> USDT Payment</h3>
+                            <h3><i class="fab fa-ethereum"></i> USDT Payment (TRON TRC20)</h3>
                             <div class="payment-instructions">
-                                <p class="payment-amount"><strong>Amount to Pay:</strong> 3 USDT (TRC20)</p>
+                                <p class="payment-amount"><strong>Amount to Pay:</strong> 5 USDT (TRC20)</p>
                                 
                                 <div class="wallet-address-box">
                                     <div class="address-header">
-                                        <span>TRC20 Wallet Address</span>
+                                        <span>TRON (TRC20) Wallet Address</span>
                                         <button onclick="copyToClipboard('modalTrc20Address')" class="copy-btn">
                                             <i class="far fa-copy"></i> Copy
                                         </button>
@@ -510,22 +536,23 @@
                                 
                                 <div class="qr-container">
                                     <img src="trc.jpg" alt="USDT TRC20 QR Code" width="180" class="qr-code">
-                                    <p class="payment-note">Scan to send exact 3 USDT</p>
+                                    <p class="payment-note">Scan to send exact 5 USDT</p>
                                 </div>
                                 
                                 <div class="verification-instructions">
                                     <h4><i class="fas fa-check-circle"></i> Payment Verification</h4>
                                     <ol>
                                         <li>After sending, check transaction on <a href="https://tronscan.org/" target="_blank">Tronscan</a></li>
-                                        <li>Send us:
+                                        <li>Send us the following via Telegram:
                                             <ul>
                                                 <li>Transaction hash (TXID)</li>
                                                 <li>Amount sent (must be exactly 5 USDT)</li>
                                                 <li>Tool name you're purchasing</li>
                                             </ul>
                                         </li>
-                                        <li>We'll deliver tool within 1-2 hours</li>
+                                        <li>We'll verify and deliver the tool within 1-2 hours</li>
                                     </ol>
+                                    <p><strong>Important:</strong> Only send USDT via the TRON (TRC20) network. Other networks may result in loss of funds.</p>
                                 </div>
                                 
                                 <div class="payment-actions">
