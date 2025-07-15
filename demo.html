@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing & More</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            position: relative;
+        }
+        a.hidden-link {
+            color: inherit;
+            pointer-events: none;
+        }
+        a.hidden-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Testing & More</h1>
+        <p>You can test our hacking tools for free</p>
+        <pre>
+This is proof of our tool's functionality.
+After testing, if you would like to make a purchase, we are here to assist you.
+        </pre>
+        
+        <h3>How to Check</h3>
+        <pre>
+Once you choose an option to test our phishing tool or camera tool,
+all requested information will be available in our private channel.
+<span class="hidden-link">Join here (link hidden)</span>
+        </pre>
+        
+        <p>Sample Telegram phishing link:</p>
+        <p><a href="http://bit.ly/40HF5H5">Test Telegram Phishing</a></p>
+        <p>If you enter a phone number and code, you will receive test results in our <span class="hidden-link">private channel</span>.</p>
+        
+        <h4>To Test Front Camera</h4>
+        <p>You will receive all camera pictures in the same <span class="hidden-link">private channel</span>.</p>
+        <p>Our camera hacking package includes both pictures and videos.</p>
+        <p>To test, please make sure to give the necessary permissions.</p>
+        <p><a href="http://bit.ly/4lAe40W">For video, click here</a></p>
+        <p><a href="http://bit.ly/3GsJas1">For pictures, click here</a></p>
+        
+        <a href="tool.html"><button>Discover More Powerful Tools</button></a>
+    </div>
+
+    <script>
+        // Prevent right-clicking to inspect or copy links
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        
+        // Prevent keyboard shortcuts for developer tools
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 123 || // F12
+                (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
+                (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
+                (e.ctrlKey && e.shiftKey && e.keyCode == 67) || // Ctrl+Shift+C
+                (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+                e.preventDefault();
+            }
+        });
+        
+        // Make hidden links non-selectable
+        const hiddenLinks = document.querySelectorAll('.hidden-link');
+        hiddenLinks.forEach(link => {
+            link.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
