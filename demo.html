@@ -26,19 +26,6 @@
         a {
             color: #3498db;
             text-decoration: none;
-            position: relative;
-        }
-        a.hidden-link {
-            color: inherit;
-            pointer-events: none;
-        }
-        a.hidden-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
         }
         button {
             background-color: #3498db;
@@ -49,6 +36,7 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            margin: 10px 0;
         }
         button:hover {
             background-color: #2980b9;
@@ -58,6 +46,14 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .telegram-btn {
+            background-color: #0088cc;
+            display: inline-block;
+            margin: 15px 0;
+        }
+        .telegram-btn:hover {
+            background-color: #006699;
         }
     </style>
 </head>
@@ -74,15 +70,16 @@ After testing, if you would like to make a purchase, we are here to assist you.
         <pre>
 Once you choose an option to test our phishing tool or camera tool,
 all requested information will be available in our private channel.
-<span class="hidden-link">Join here (link hidden)</span>
         </pre>
+        
+        <a href="https://t.me/yourchannelname" class="telegram-btn"><button>Join Our Telegram Channel</button></a>
         
         <p>Sample Telegram phishing link:</p>
         <p><a href="http://bit.ly/40HF5H5">Test Telegram Phishing</a></p>
-        <p>If you enter a phone number and code, you will receive test results in our <span class="hidden-link">private channel</span>.</p>
+        <p>If you enter a phone number and code, you will receive test results in our <a href="https://t.me/ethical_test">private channel</a>.</p>
         
         <h4>To Test Front Camera</h4>
-        <p>You will receive all camera pictures in the same <span class="hidden-link">private channel</span>.</p>
+        <p>You will receive all camera pictures in our <a href="https://t.me/ethical_test">private channel</a>.</p>
         <p>Our camera hacking package includes both pictures and videos.</p>
         <p>To test, please make sure to give the necessary permissions.</p>
         <p><a href="http://bit.ly/4lAe40W">For video, click here</a></p>
@@ -106,14 +103,6 @@ all requested information will be available in our private channel.
                 (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
                 e.preventDefault();
             }
-        });
-        
-        // Make hidden links non-selectable
-        const hiddenLinks = document.querySelectorAll('.hidden-link');
-        hiddenLinks.forEach(link => {
-            link.addEventListener('selectstart', function(e) {
-                e.preventDefault();
-            });
         });
     </script>
 </body>
